@@ -1,0 +1,44 @@
+1. Open your HTML file in VS Code
+File path:
+D:\PTI_Machines\leave_dashboard\index.html
+
+Edit it as needed:
+
+Add new leave rows
+
+Update dates, remote work, guest lectures
+
+Save changes using Ctrl + S
+
+🔹 2. Open Terminal (Git Bash or VS Code terminal)
+Make sure you’re in your project folder:
+
+bash
+Copy
+Edit
+cd /d/PTI_Machines/leave_dashboard
+🔹 3. Add and Commit the Changes
+bash
+Copy
+Edit
+git add .
+git commit -m "Updated dashboard for July 11"
+✅ This saves your daily changes in Git.
+
+🔹 4. Push to GitHub
+bash
+Copy
+Edit
+git push
+🔥 Now GitHub auto-updates your website!
+
+🔹 5. DONE! ✅
+Your live link instantly shows the new version.
+
+Ask Sir to refresh the page:
+
+arduino
+Copy
+Edit
+https://SudhakaranMurugan.github.io/leave_dashboard/
+He’ll see the updated dashboard — no delay, no tension! 🧠📊
