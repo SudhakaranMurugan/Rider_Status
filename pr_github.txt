@@ -42,3 +42,24 @@ Copy
 Edit
 https://SudhakaranMurugan.github.io/leave_dashboard/
 He’ll see the updated dashboard — no delay, no tension! 🧠📊
+
+
+
+
+ 
+PS D:\PTI_Machines\leave_dashboard> git add .
+PS D:\PTI_Machines\leave_dashboard> git commit -m "Updated dashboard for July 10"
+[main f2a58b4] Updated dashboard for July 10
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+PS D:\PTI_Machines\leave_dashboard> git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 373 bytes | 186.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/SudhakaranMurugan/leave_dashboard.git
+   a99eecd..f2a58b4  main -> main
+PS D:\PTI_Machines\leave_dashboard> 
+ *  History restored 
