@@ -1,0 +1,514 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>See-Saw Animation</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.4/dist/semantic.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.4/dist/semantic.min.js"></script>
+  <style>
+    body {
+      text-align: center;
+      font-family: sans-serif;
+      background: #f0f0f0;
+      padding: 50px;
+    }
+
+    input {
+      padding: 8px;
+      margin: 5px;
+      width: 60px;
+    }
+
+    .seesaw-container {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      margin: 50px auto;
+      padding: 20px 0;
+
+    }
+
+    .seesaw {
+      position: absolute;
+      width: 300px;
+      height: 10px;
+      background: #6e4b4b;
+      top: 120px;
+      left: 3;
+      transform-origin: center;
+      transition: transform 0.5s ease-in-out;
+      z-index: 5;
+    }
+
+    .pivot {
+  position: absolute;
+  top: 130px;
+  left: 140px;
+  width: 20px;
+  height: 20px;
+  background: #333;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  z-index: 2;
+}
+
+
+    .seat {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: #4CAF50;
+      border-radius: 50%;
+      top: -60px; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: white;
+      transition: transform 0.5s ease-in-out;
+      
+    }
+
+    .left-seat {
+      left: 0;
+      z-index: 10;
+    }
+
+    .right-seat {
+      width: 80px;
+      right: 0;
+      background: #2196F3;
+    }
+  </style>
+</head>
+<body>
+  <div class="ui inverted header" style="border-radius: 10px; padding: 20px; margin-bottom: 20PX;background-color: black;">LoundrIQ Website (Fixed Price Model)</div>
+  <table class="ui celled table">
+      <thead>
+        <th>Level</th>
+        <th>Client Providing</th>
+        <th>PT Providing</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Requirement (Based on the need - to rule, to add value, to add Performance, to eliminate/to get freedom) </td>
+          <td>Proposal ( using components or gadgets to fit into the industry ) </td>
+        </tr>
+         <tr>
+          <td>2</td>
+          <td>Payment (Based on the accepted terms. Unless the requirement added extra.) </td>
+          <td>Product ( using proposal to fit into the market ) </td>
+        </tr>
+         <tr>
+          <td>3</td>
+          <td>Data (Standard data like pricing, logo, etc. Dynamic data, Design data set, blog conents, Reference contents, report samples, existing db contents, third party apis, migration data if any, etc.) </td>
+          <td>Project ( using product to fit into the company )</td>
+        </tr>
+         <tr>
+          <td>4</td>
+          <td>Infra (Based on the each one's accessiblity) </td>
+          <td>Program ( using project to fit into the user ) </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <!--1-->
+  <div class="ui inverted segment" data-seesawtype="proposal">
+<h2 class="ui inverted header">Proposal See-Saw (Against Idea/Solution Request & Requirements) </h2>
+  <input style="width: 100px;" type="number" id="input1" class="input1" placeholder="Left" />
+  <input style="width: 100px;" type="number" id="input2" class="input2" placeholder="Right" />
+<div style="background-color: rgb(210, 225, 236);width: 50%;margin: auto;border-radius: 5px;">
+<div class="seesaw-container">
+    <div class="seesaw">
+      <div class="seat left-seat" class="leftSeat">PT</div>
+      <div class="seat right-seat" class="rightSeat">LoundrIQ</div>
+    </div>
+      <div style="z-index: 1; position: absolute; top: 125px; left: 0; width: 100%; height: 2px; background: rgb(244, 241, 241);"></div>
+    <div class="pivot"></div>
+  </div>
+</div>
+<button class="ui grey button valueButton">Fair Play</button>
+<button class="ui grey button acceptedButton">Accepted Play</button>
+
+
+
+
+
+
+
+
+
+
+<div class="ui two column grid" style="margin-top: 25px;background-color: rgb(163, 163, 163);margin-bottom: 20px;">
+  <div class="column">
+    <div class="ui center aligned header">PTi Machines</div>
+    <table class="ui celled table">
+      <thead>
+        <th>#</th>
+        <th>Quatation</th>
+        <th>Value</th>
+        <th>Accepted Amount</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>00A23</td>
+          <td id="ac" class="ac" >125500</td>
+          <td id="am" class="am" >38875</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="column">
+    <div class="ui center aligned header">LoundrIQ</div>
+    <table class="ui celled table">
+      <thead>
+        <th>#</th>
+        <th>Receipt</th>
+        <th>Received Amount</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>PTT25A0001</td>
+          <td id="rc" class="rc">10000</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <table class="ui celled table" style="text-align: left; vertical-align: middle; margin-top: 2rem;">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Item/Service</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Consultation</td><td>Requested</td>
+        </tr>
+        <tr><td>2</td><td>Brand Strategy & Planning</td><td>Requested</td>
+        </tr>
+        <tr><td>3</td><td>Website Design (UX & UI)</td><td>Requested</td>
+        </tr>
+        <tr><td>4</td><td>Responsive Development</td><td>Requested</td>
+        </tr>
+        <tr><td>5</td><td>Hosting Setup (Dev/Staging/Live)</td><td style="color: blue;">Suggested</td>
+        </tr>
+        <tr><td>6</td><td>Domain DNS & SSL Manage</td><td style="color: blue;">Suggested</td>
+        </tr>
+        <tr><td>7</td><td>SEO Optimization (Basic)</td><td style="color: blue;">Suggested</td>
+        </tr>
+        <tr><td>8</td><td>Maintenance & Support (6 Months)</td><td style="color: blue;">Suggested</td>
+        </tr>
+        <tr><td>9</td><td>Advanced SEO Setup (Schema, Analytics)</td><td>Requested</td>
+        </tr>
+        <tr><td>10</td><td>Content Copy Review/Assistance</td><td>Requested</td>
+        </tr>
+        <tr><td>11</td><td>Performance Optimization (Web Vitals)</td><td>Requested</td>
+        </tr>
+        <tr><td>12</td><td>Custom Integrations (Whatsapp API/CRM/Email)</td><td>Requested</td>
+        </tr>
+        <tr><td>13</td><td>UI Animations/Interaction Design</td><td style="color: blue;">Suggested</td>
+        </tr>
+        <tr><td>14</td><td>Analytics Dashboard Setup</td><td style="color:blue">Suggested</td>
+        </tr> 
+      </tbody>
+      <!-- <tfoot>
+        <tr>
+            <div style="page-break-inside: avoid;"></div>
+          <th colspan="5" style="text-align: right;">Gross Total</th>
+          <th id="gross-total">1,25,500</th>
+        </tr>
+        <tr>
+          <th colspan="5" style="text-align: right;">Total Discount</th>
+          <th id="total-discount">86,625</th>
+        </tr>
+        <tr>
+          <th colspan="5" style="text-align: right;">Net Payable</th>
+          <th id="net-payable">38,875</th>
+        </tr>
+      </tfoot> -->
+    </table>
+
+
+  </div>
+</div>
+
+</div>
+
+
+    
+    <!--2-->
+  <div class="ui inverted segment" data-seesawtype="production">
+<h2 class="ui inverted header">Production See-Saw (Against Purchase Order & Payment)</h2>
+  <input style="width: 100px;" type="number" id="input1" class="input1" placeholder="Left" />
+  <input style="width: 100px;" type="number" id="input2" class="input2" placeholder="Right" />
+<div style="background-color: rgb(229, 235, 178);width: 50%;margin: auto;border-radius: 5px;">
+<div class="seesaw-container">
+    <div class="seesaw">
+      <div class="seat left-seat" class="leftSeat">PT</div>
+      <div class="seat right-seat" class="rightSeat">LoundrIQ</div>
+    </div>
+      <div style="z-index: 1; position: absolute; top: 125px; left: 0; width: 100%; height: 2px; background: rgb(244, 241, 241);"></div>
+    <div class="pivot"></div>
+  </div>
+</div>
+<button class="ui grey button valueButton">Fair Play</button>
+<button class="ui grey button acceptedButton">Accepted Play</button>
+
+
+
+
+<div class="ui two column grid" style="margin-top: 25px;background-color: rgb(163, 163, 163);margin-bottom: 20px;">
+  <div class="column">
+    <div class="ui center aligned header">PTi Machines</div>
+    <table class="ui celled table">
+      <thead>
+        <th>#</th>
+        <th>Quatation</th>
+        <th>Value</th>
+        <th>Accepted Amount</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>00A23</td>
+          <td id="ac" class="ac" >125500</td>
+          <td id="am" class="am" >38875</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="column">
+    <div class="ui center aligned header">LoundrIQ</div>
+    <table class="ui celled table">
+      <thead>
+        <th>#</th>
+        <th>Receipt</th>
+        <th>Received Amount</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>PTT25A0001</td>
+          <td id="rc" class="rc">10000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</div>
+
+
+
+    <!--3-->
+  <div class="ui inverted segment" data-seesawtype="project">
+<h2 class="ui inverted header">Project See-Saw (Against Customization Request & Data) </h2>
+  <input style="width: 100px;" type="number" id="input1" class="input1" placeholder="Left" />
+  <input style="width: 100px;" type="number" id="input2" class="input2" placeholder="Right" />
+<div style="background-color: rgb(228, 188, 188);width: 50%;margin: auto;border-radius: 5px;">
+<div class="seesaw-container">
+    <div class="seesaw">
+      <div class="seat left-seat" class="leftSeat">PT</div>
+      <div class="seat right-seat" class="rightSeat">LoundrIQ</div>
+    </div>
+      <div style="z-index: 1; position: absolute; top: 125px; left: 0; width: 100%; height: 2px; background: rgb(244, 241, 241);"></div>
+    <div class="pivot"></div>
+  </div>
+</div>
+<button class="ui grey button valueButton">Fair Play</button>
+<button class="ui grey button acceptedButton">Accepted Play</button>
+
+
+
+
+<div class="ui two column grid" style="margin-top: 25px;background-color: rgb(163, 163, 163);margin-bottom: 20px;">
+  <div class="column">
+    <div class="ui center aligned header">PTi Machines</div>
+    <table class="ui celled table">
+      <thead>
+        <th>#</th>
+        <th>Quatation</th>
+        <th>Value</th>
+        <th>Accepted Amount</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>00A23</td>
+          <td id="ac" class="ac" >125500</td>
+          <td id="am" class="am" >38875</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="column">
+    <div class="ui center aligned header">LoundrIQ</div>
+    <table class="ui celled table">
+      <thead>
+        <th>#</th>
+        <th>Receipt</th>
+        <th>Received Amount</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>PTT25A0001</td>
+          <td id="rc" class="rc">10000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+
+    <!--4-->
+  <div class="ui inverted segment" data-seesawtype="programme">
+<h2 class="ui inverted header">Programme See-Saw (Against Deployment/Training/Support Request and Tickets ) </h2>
+  <input style="width: 100px;" type="number" id="input1" class="input1" placeholder="Left" />
+  <input style="width: 100px;" type="number" id="input2" class="input2" placeholder="Right" />
+<div style="background-color: rgb(209, 231, 193);width: 50%;margin: auto;border-radius: 5px;">
+<div class="seesaw-container">
+    <div class="seesaw">
+      <div class="seat left-seat" class="leftSeat">PT</div>
+      <div class="seat right-seat" class="rightSeat">LoundrIQ</div>
+    </div>
+      <div style="z-index: 1; position: absolute; top: 125px; left: 0; width: 100%; height: 2px; background: rgb(244, 241, 241);"></div>
+    <div class="pivot"></div>
+  </div>
+</div>
+<button class="ui grey button valueButton">Fair Play</button>
+<button class="ui grey button acceptedButton">Accepted Play</button>
+
+
+
+
+<div class="ui two column grid" style="margin-top: 25px;background-color: rgb(163, 163, 163);margin-bottom: 20px;">
+  <div class="column">
+    <div class="ui center aligned header">PTi Machines</div>
+    <table class="ui celled table">
+      <thead>
+        <th>#</th>
+        <th>Quatation</th>
+        <th>Value</th>
+        <th>Accepted Amount</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>00A23</td>
+          <td id="ac" class="ac" >125500</td>
+          <td id="am" class="am" >38875</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="column">
+    <div class="ui center aligned header">LoundrIQ</div>
+    <table class="ui celled table">
+      <thead>
+        <th>#</th>
+        <th>Receipt</th>
+        <th>Received Amount</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>PTT25A0001</td>
+          <td id="rc" class="rc">10000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</div>
+
+
+<script>
+  $(document).ready(function () {
+    function updateSeesaw($segment) {
+      const $input1 = $segment.find(".input1");
+      const $input2 = $segment.find(".input2");
+      const $seesaw = $segment.find(".seesaw");
+      const $leftSeat = $segment.find(".leftSeat, .left-seat");
+      const $rightSeat = $segment.find(".rightSeat, .right-seat");
+
+      const val1 = parseFloat($input1.val()) || 0;
+      const val2 = parseFloat($input2.val()) || 0;
+
+      const maxAngle = 20;
+      const diff = val1 - val2;
+      const total = Math.abs(val1) + Math.abs(val2);
+
+      let angle = 0;
+      if (total !== 0) {
+        angle = (diff / total) * maxAngle;
+      }
+
+      $seesaw.css("transform", `rotate(${-angle}deg)`);
+
+      const seatShift = (angle / maxAngle) * 20;
+      $leftSeat.css("transform", `translateY(${seatShift}px)`);
+      $rightSeat.css("transform", `translateY(${-seatShift}px)`);
+    }
+
+    // Bind input event dynamically to all segments
+    $(document).on("input", ".segment[data-seesawtype] .input1, .segment[data-seesawtype] .input2", function () {
+      const $segment = $(this).closest(".segment[data-seesawtype]");
+      updateSeesaw($segment);
+    });
+
+    // Fair Play Button
+    $('body').on('touchstart click', '.valueButton', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const $segment = $(this).closest(".segment[data-seesawtype]");
+      console.log('Fair Play clicked for:', $segment.attr("data-seesawtype"));
+
+      const ac = $segment.find(".ac").text();
+      const rc = $segment.find(".rc").text();
+
+      $segment.find(".input1").val(ac);
+      $segment.find(".input2").val(rc);
+      updateSeesaw($segment);
+    });
+
+    // Accepted Play Button
+    $('body').on('touchstart click', '.acceptedButton', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const $segment = $(this).closest(".segment[data-seesawtype]");
+      console.log('Accepted Play clicked for:', $segment.attr("data-seesawtype"));
+
+      const am = $segment.find(".am").text();
+      const rc = $segment.find(".rc").text();
+
+      $segment.find(".input1").val(am);
+      $segment.find(".input2").val(rc);
+      updateSeesaw($segment);
+    });
+  });
+</script>
+
+
+
+
+</body>
+</html>
